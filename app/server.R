@@ -4,7 +4,7 @@ library(shiny)
 library(shinyBS)
 library(magrittr)
 library(DBI)
-library(aikia)
+
 
 
 # Define server logic required to draw a histogram
