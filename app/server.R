@@ -27,6 +27,12 @@ shinyServer(function(input, output, session) {
   
   DBI::dbDisconnect(mydb)
   
+  
+  write_counter_to_sql()
+  
+  
+  
+  
   # select dates for selection input
   all_dates <- tic_estimates %>% dplyr::pull(retrieval_date) %>% unique() %>% as.character()
   

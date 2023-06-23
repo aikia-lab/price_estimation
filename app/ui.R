@@ -69,7 +69,14 @@ shinyUI(
         tags$link(rel = "stylesheet", 
                   type = "text/css", 
                   href = "custom.css"),
-        tags$style("@import url(https://use.fontawesome.com/releases/v6.1.1/css/all.css);")
+        tags$style("@import url(https://use.fontawesome.com/releases/v6.1.1/css/all.css);"),
+        tags$style(HTML("
+                .tooltip > .tooltip-inner {
+                width: 400px;
+                color: black;
+                background-color: white;
+                }
+                "))
       ),
       
       # Website metadata for eg link preview
