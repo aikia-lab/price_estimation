@@ -176,7 +176,7 @@ px_est_fun <- function(new_est,date, pe_val = 'forward_pe', scale = 1){#scale = 
       updatemenus = list(
         list(x = 0.2,
              y=1.1,
-             bgcolor = aikia::aikia_main_light(),
+             bgcolor = "#61B7B7",
              buttons = filter_buttons)
       ),
       font = list(weight = 'bold')
