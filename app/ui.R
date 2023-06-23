@@ -137,9 +137,11 @@ shinyUI(
                                                   selected = 2,
                                                   not_selected_background = 'grey',
                                                   selected_background = main_color_light),
-                                            shinyBS::bsPopover(
-                                              id = "scale_bubble", title = "bubble size",placement = "bottom", content = "by scaling to potential gain/loss some bubbles will be too small to be plotted"
-                                            )
+                                          #  shinyBS::bsPopover(
+                                          #    id = "scale_bubble", title = "bubble size",placement = "bottom", content = "by scaling to potential gain/loss some bubbles will be too small to be plotted"
+                                          #  )
+                                            shinyBS::bsTooltip(id = "scale_bubble", title = "by scaling to potential gain/loss some bubbles will be too small to be plotted", 
+                                                      placement = "bottom", trigger = "hover")
                                   
                                   )
                                 
