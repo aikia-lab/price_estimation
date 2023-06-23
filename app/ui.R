@@ -135,6 +135,7 @@ shinyUI(
                                   ),
                                   shiny::column(width = 4,
                                             #    shiny::sliderInput('scale_pe', "scale bubble size to see all tickers", 1, 20, 10)
+                                            tags$div(
                                                 shinyThings::radioSwitchButtons(
                                                   inputId = "scale_bubble", 
                                                   label = NULL, 
@@ -143,11 +144,12 @@ shinyUI(
                                                     'size to potential gain/loss' = 2),
                                                   selected = 2,
                                                   not_selected_background = 'grey',
-                                                  selected_background = main_color_light),
+                                                  selected_background = main_color_light)
+                                            , id= "tooltip_id"),
                                           #  shinyBS::bsPopover(
                                           #    id = "scale_bubble", title = "bubble size",placement = "bottom", content = "by scaling to potential gain/loss some bubbles will be too small to be plotted"
                                           #  )
-                                            shinyBS::bsTooltip(id = "scale_bubble", title = "by scaling to potential gain/loss some bubbles will be too small to be plotted", 
+                                            shinyBS::bsTooltip(id = "tooltip_id", title = "by scaling to potential gain/loss some bubbles will be too small to be plotted", 
                                                       placement = "bottom", trigger = "hover")
                                   
                                   )
