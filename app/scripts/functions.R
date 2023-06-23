@@ -52,14 +52,11 @@ px_est_fun <- function(new_est,date, pe_val = 'forward_pe', scale = 1){#scale = 
                     indic_px_nxt_yr = estimation_eps_nxt_yr * get(pe_val),
                     price_difference_act_yr = (indic_px_act_yr / last_price) -1,
                     price_difference_nxt_yr = (indic_px_nxt_yr / last_price) -1,
-                    ring_color = ifelse(price_difference_act_yr > 0, aikia::aikia_palette_eight()[1], aikia::aikia_palette_eight()[4])) %>% 
+                    ring_color = ifelse(price_difference_act_yr > 0, "#0F7B7B", "#CC6A19")) %>%# palette_eight [1] & [4]
     dplyr::mutate(diameter = round(abs(price_difference_act_yr),digits = 0),
                   name = factor(name, levels = fct_levels)) %>% 
     tidyr::drop_na(diameter) 
   
-#  plot_prep <- head(plot_prep,n=6)
-testdf<<-plot_prep %>% dplyr::select(ticker_yh,rlang::sym(pe_val),estimation_eps_act_yr,indic_px_act_yr,last_price,price_difference_act_yr,diameter)
-
 
   # helper functions
   hline <- function(y = 0, color = "black"){

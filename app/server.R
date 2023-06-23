@@ -4,7 +4,7 @@ library(shiny)
 library(shinyBS)
 library(magrittr)
 library(DBI)
-
+library(aikia)
 
 
 # Define server logic required to draw a histogram
@@ -13,8 +13,6 @@ shinyServer(function(input, output, session) {
   
   
   # Temprorary Initial load of data Frames
-  
-#  mydb <- aikia::connect_to_db(user = "ceilert",password = "ceilert")
   mydb <- connect_to_DB()
   
   tic_estimates <- DBI::dbGetQuery(conn = mydb,
