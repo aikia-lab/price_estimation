@@ -135,21 +135,39 @@ shinyUI(
                                   ),
                                   shiny::column(width = 4,
                                             #    shiny::sliderInput('scale_pe', "scale bubble size to see all tickers", 1, 20, 10)
-                                            tags$div(
-                                                shinyThings::radioSwitchButtons(
-                                                  inputId = "scale_bubble", 
-                                                  label = NULL, 
-                                                  choices = tibble::tibble(
-                                                    'one size for all' = 1,
-                                                    'size to potential gain/loss' = 2),
-                                                  selected = 2,
-                                                  not_selected_background = 'grey',
-                                                  selected_background = main_color_light)
-                                            , id= "tooltip_id"),
+                                            tags$span(
+                                        #        shinyThings::radioSwitchButtons(
+                                        #          inputId = "scale_bubble", 
+                                        #          label = NULL, 
+                                        #          choices = tibble::tibble(
+                                        #            'one size for all' = 1,
+                                        #            'size to potential gain/loss' = 2),
+                                        #          selected = 2,
+                                        #          not_selected_background = 'grey',
+                                        #          selected_background = main_color_light)
+                                        #    , id= "tooltip_id"
+                                            
+                                            
+                                            shinyWidgets::radioGroupButtons(
+                                              inputId = "scale_bubble",
+                                              label = NULL,
+                                              choiceNames = c('one size for all',
+                                                              'size to potential gain/loss'),
+                                              choiceValues = c(1,2),
+                                          #    choices = c(1,2),
+                                              individual = TRUE,
+                                              checkIcon = list(
+                                                yes = tags$i(class = "fa fa-circle", 
+                                                             style = "color: #0F7B7B"),
+                                                no = tags$i(class = "fa fa-circle-o", 
+                                                            style = "color: #0F7B7B")))
+                                            
+                                            
+                                            ),
                                           #  shinyBS::bsPopover(
                                           #    id = "scale_bubble", title = "bubble size",placement = "bottom", content = "by scaling to potential gain/loss some bubbles will be too small to be plotted"
                                           #  )
-                                            shinyBS::bsTooltip(id = "tooltip_id", title = "by scaling to potential gain/loss some bubbles will be too small to be plotted", 
+                                            shinyBS::bsTooltip(id = "scale_bubble", title = "by scaling to potential gain/loss some bubbles will be too small to be plotted", 
                                                       placement = "bottom", trigger = "hover")
                                   
                                   )
