@@ -16,8 +16,6 @@ shinyServer(function(input, output, session) {
   mydb <- connect_to_DB()
 
 
-
-
   tic_estimates <- DBI::dbGetQuery(conn = mydb,
                                    "SELECT *
                                    FROM fin_ticker_market_estimation
