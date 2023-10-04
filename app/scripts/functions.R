@@ -101,7 +101,7 @@ px_est_fun <- function(new_est,date, pe_val = 'forward_pe', scale = 1){#scale = 
 
   filter_buttons <- purrr::map(unique(sort(as.character(plot_prep$name))), getbuttons)
 
-  
+
   if(scale == 1){
   est_plotly <- plot_prep %>%
     dplyr::filter(diameter < 5) %>% 
