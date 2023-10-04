@@ -16,7 +16,7 @@ connect_to_DB <- function(mydb, group = "fin_data"){
                                                            "/my.cnf"))
       
     } else { #Production on Linux (No Macs here ;))
-      
+ print(group)     
       ip <- unlist(pingr::nsl("aikia.org")$answer$data)
       mydb <- DBI::dbConnect(RMariaDB::MariaDB(),host = ip, group = group)
       
